@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marcos Matos Shop</title>
+    <script src="main.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- inicio de header boton-->
+    <header
+      class="bg-dark d-flex flex-row justify-content-between m-0 p-3 toto"
+    >
+      <!-- logo y nombre -->
+      <div class="">
+        <img src="un-pan.png" alt="logo" width="30" height="30" class="mb-2" />
+        <a class="navbar-brand text-light fs-4 ms-2" href="index.html"
+          >Matos Shop</a
+        >
+      </div>
+      <form
+        class="row row-cols g-3 align-items-center"
+        onsubmit="event.preventDefault(); getProducts()">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Buscar"
+          aria-label="Search"
+          id="formulario"
+          onsubmit="getProducts()"
+        />
+        <button
+          class="btn btn-success"
+          id="boton"
+          type="button"
+          onclick="getProducts()"
+        >
+          Buscar
+        </button>
+      </form>
+      <!--Botones de Categorias-->
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenu2"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Categorias
+        </button>
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="dropdownMenu2"
+          id="category_list"
+        ></ul>
+      </div>
+    </header>
+    <!-- fin del header -->
+
+    <div class="products"></div>
+    <div class="app"></div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"
+  ></script>
+</html>
