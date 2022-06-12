@@ -11,12 +11,11 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="bg-secondary">
     <!-- inicio de header boton-->
     <header
-      class="bg-dark d-flex flex-row justify-content-between m-0 p-3 toto"
+      class="bg-dark d-flex flex-row justify-content-between m-0 p-3"
     >
       <!-- logo y nombre -->
       <div class="">
@@ -25,26 +24,30 @@
           >Matos Shop</a
         >
       </div>
-      <form
-        class="row row-cols g-3 align-items-center"
-        onsubmit="event.preventDefault(); getProducts()">
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Buscar"
-          aria-label="Search"
-          id="formulario"
-          onsubmit="getProducts()"
-        />
-        <button
-          class="btn btn-success"
-          id="boton"
-          type="button"
-          onclick="getProducts()"
-        >
+      <div class="form-outline">
+        <form
+          class="row row-cols-lg-auto"
+          onsubmit="event.preventDefault(); getProducts()">
+          <input
+            class="form-control-rounded"
+            type="text"
+            placeholder="Buscar"
+            aria-label="Search"
+            id="formulario"
+            onsubmit="getProducts()"
+          />
+          <button
+            class="btn btn-success"
+            id="boton"
+            type="button"
+            onclick="getProducts()"
+          >
           Buscar
         </button>
       </form>
+
+      </div>
+      
       <!--Botones de Categorias-->
       <div class="dropdown">
         <button
@@ -62,6 +65,7 @@
         ></ul>
       </div>
     </header>
+    
     <!-- fin del header -->
 
     <div class="products"></div>
