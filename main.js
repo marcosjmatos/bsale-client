@@ -6,7 +6,7 @@ const comprarButtons = document.querySelectorAll(".btn-primary");
 // const tarjetaShopping = document.getElementsByClassName("tarjeta")
 const divisa = "$";
 let text;
-const URL = "http://localhost:3000/";
+const URL = "https://bsale-server.herokuapp.com/";
 
 async function getProducts(text) {
   let elements = [];
