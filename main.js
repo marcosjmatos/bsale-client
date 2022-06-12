@@ -115,7 +115,7 @@ function renderizarProductos(productos) {
   productos.forEach((info) => {
     // Estructura
     const miNodo = document.createElement('div');
-    miNodo.classList.add('card', 'col-3', 'm-3');
+    miNodo.classList.add('card', 'col-sm-6','col-md-4' ,'m-3','col-lg-3');
     // Body
     const miNodoCardBody = document.createElement('div');
     miNodoCardBody.classList.add(
