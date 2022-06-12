@@ -169,9 +169,6 @@ function renderizarNoEncontrado() {
   const miNodoCardBody = document.createElement('div');
   miNodoCardBody.classList.add(
     'card-body',
-    'd-flex',
-    'flex-row',
-    'justify-content-center'
   );
   // Titulo
   const miNodoTitle = document.createElement('h5');
@@ -179,7 +176,7 @@ function renderizarNoEncontrado() {
   miNodoTitle.textContent = 'Producto no encontrado';
   // Imagen
   const miNodoImagen = document.createElement('img');
-  miNodoImagen.classList.add('img-fluid');
+  miNodoImagen.classList.add("img-fluid");
   miNodoImagen.setAttribute(
     'src',
     'https://media.istockphoto.com/vectors/curiosity-magnifying-glass-doodle-cartoon-with-question-marks-vector-id1029271926?s=2048x2048'
