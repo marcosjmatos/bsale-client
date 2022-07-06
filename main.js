@@ -6,7 +6,6 @@ const removeElementButtons = document.querySelectorAll(
 );
 const comprarButtons =
   document.querySelectorAll('.btn-primary');
-// const tarjetaShopping = document.getElementsByClassName("tarjeta")
 const divisa = '$';
 let text;
 const URL = 'https://bsale-server.herokuapp.com/';
@@ -35,7 +34,6 @@ async function getProducts() {
   }
 }
 async function loadElement(prod) {
-  //hacer esto en el backend
   const res = await fetch(`${URL}products/${prod}`);
   const data = res.json();
   return data;
@@ -55,7 +53,6 @@ async function getProductsByCat(cat) {
   }
 }
 async function loadedCategory(cat) {
-  //hacer esto en el backend
 
   const res = await fetch(`${URL}category/${cat}`);
   const data = res.json();
@@ -98,7 +95,7 @@ async function renderizarListaCategorias() {
     li.appendChild(button);
     lista.appendChild(li);
   }
-  // Botones de Categorias
+// Botones de Categorias
   const categoryButtons = document.querySelectorAll(
     '#category_list > li > button'
   );
@@ -113,24 +110,21 @@ async function renderizarListaCategorias() {
 //Genera las Tarjetas de los productos
 function renderizarProductos(productos) {
   productos.forEach((info) => {
-    // Estructura
+// Estructura
     const miNodo = document.createElement('div');
-    miNodo.classList.add('card', 'col-sm-6','col-md-4' ,'m-3','col-lg-3');
-    // Body
+    miNodo.classList.add('card', 'col-xs-12' ,'col-sm-6','col-md-6' ,'m-5','col-lg-3');
+// Body
     const miNodoCardBody = document.createElement('div');
     miNodoCardBody.classList.add(
       'card-body',
-      'd-flex',
-      'flex-column',
-      'justify-content-end'
     );
-    // Titulo
+// Titulo
     const miNodoTitle = document.createElement('h5');
-    miNodoTitle.classList.add('card-title', 'text-wrap');
+    miNodoTitle.classList.add('card-title');
     miNodoTitle.textContent = info.name;
-    // Imagen
+// Imagen
     const miNodoImagen = document.createElement('img');
-    miNodoImagen.classList.add('img-thumbnail');
+    miNodoImagen.classList.add('img-fluid');
     miNodoImagen.setAttribute(
       'src',
       `${
@@ -139,15 +133,15 @@ function renderizarProductos(productos) {
           : info.url_image
       }`
     );
-    // Precio
+// Precio
     const miNodoPrecio = document.createElement('p');
     miNodoPrecio.classList.add('card-text');
     miNodoPrecio.textContent = `${info.price}${divisa}`;
-    // Descuento
+// Descuento
     const miNodoDescuento = document.createElement('p');
-    miNodoDescuento.classList.add('card-text');
-    miNodoDescuento.textContent = `${info.discount}% OFF!`;
-    // Boton
+    miNodoDescuento.classList.add('fw-bolder');
+    miNodoDescuento.textContent = info.discount == 0 ? "" : `${info.discount}% OFF!`;
+// Boton
     const miNodoBoton = document.createElement('button');
     miNodoBoton.classList.add('btn', 'btn-primary');
     miNodoBoton.textContent = 'Comprar';
@@ -159,22 +153,23 @@ function renderizarProductos(productos) {
     miNodoCardBody.appendChild(miNodoBoton);
     miNodo.appendChild(miNodoCardBody);
     resultado.appendChild(miNodo);
+    console.log(miNodo);
   });
 }
 function renderizarNoEncontrado() {
-  // Estructura
+// Estructura
   const miNodo = document.createElement('div');
   miNodo.classList.add('card', 'col-sm-2');
-  // Body
+// Body
   const miNodoCardBody = document.createElement('div');
   miNodoCardBody.classList.add(
     'card-body',
   );
-  // Titulo
+// Titulo
   const miNodoTitle = document.createElement('h5');
   miNodoTitle.classList.add('card-title', 'text-wrap');
   miNodoTitle.textContent = 'Producto no encontrado';
-  // Imagen
+// Imagen
   const miNodoImagen = document.createElement('img');
   miNodoImagen.classList.add("img-fluid");
   miNodoImagen.setAttribute(
@@ -188,3 +183,4 @@ function renderizarNoEncontrado() {
 }
 
 renderizarListaCategorias();
+getProducts()
