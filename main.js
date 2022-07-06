@@ -153,7 +153,6 @@ function renderizarProductos(productos) {
     miNodoCardBody.appendChild(miNodoBoton);
     miNodo.appendChild(miNodoCardBody);
     resultado.appendChild(miNodo);
-    console.log(miNodo);
   });
 }
 function renderizarNoEncontrado() {
