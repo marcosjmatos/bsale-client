@@ -112,11 +112,12 @@ function renderizarProductos(productos) {
   productos.forEach((info) => {
 // Estructura
     const miNodo = document.createElement('div');
-    miNodo.classList.add('card', 'col-xs-12' ,'col-sm-6','col-md-6' ,'m-5','col-lg-3');
+    miNodo.classList.add('card','col-sm-6','col-md-3','m-2');
+    miNodo.setAttribute("style","width:18rem")
 // Body
     const miNodoCardBody = document.createElement('div');
     miNodoCardBody.classList.add(
-      'card-body',
+      'card-body'
     );
 // Titulo
     const miNodoTitle = document.createElement('h5');
@@ -124,7 +125,8 @@ function renderizarProductos(productos) {
     miNodoTitle.textContent = info.name;
 // Imagen
     const miNodoImagen = document.createElement('img');
-    miNodoImagen.classList.add('img-fluid');
+    miNodoImagen.classList.add('card-img-top','img-fluid');
+    miNodoImagen.setAttribute("alt",`${info.name}`)
     miNodoImagen.setAttribute(
       'src',
       `${
@@ -132,18 +134,18 @@ function renderizarProductos(productos) {
           ? 'https://i.pinimg.com/564x/a3/6b/42/a36b422bb2bebcbd77bba846b83ddf5d.jpg'
           : info.url_image
       }`
-    );
+    )
 // Precio
     const miNodoPrecio = document.createElement('p');
     miNodoPrecio.classList.add('card-text');
     miNodoPrecio.textContent = `${info.price}${divisa}`;
 // Descuento
     const miNodoDescuento = document.createElement('p');
-    miNodoDescuento.classList.add('fw-bolder');
+    miNodoDescuento.classList.add('fw-bolder','sizen-1');
     miNodoDescuento.textContent = info.discount == 0 ? "" : `${info.discount}% OFF!`;
 // Boton
-    const miNodoBoton = document.createElement('button');
-    miNodoBoton.classList.add('btn', 'btn-primary');
+    const miNodoBoton = document.createElement('a');
+    miNodoBoton.classList.add(`btn`,`btn-success`);
     miNodoBoton.textContent = 'Comprar';
     miNodoBoton.setAttribute('marcador', info.id);
     miNodoCardBody.appendChild(miNodoImagen);
