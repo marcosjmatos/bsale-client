@@ -122,7 +122,7 @@ function renderizarProductos(productos) {
       );
 // Titulo
     const miNodoTitle = document.createElement('h5');
-    miNodoTitle.classList.add('card-title');
+    miNodoTitle.classList.add('card-title','m-0');
     miNodoTitle.textContent = info.name;
 // Imagen
     const miNodoImagen = document.createElement('img');
@@ -138,11 +138,11 @@ function renderizarProductos(productos) {
     )
 // Precio
     const miNodoPrecio = document.createElement('p');
-    miNodoPrecio.classList.add('card-text');
+    miNodoPrecio.classList.add('card-text','m-0');
     miNodoPrecio.textContent = `${info.price}${divisa}`;
 // Descuento
     const miNodoDescuento = document.createElement('p');
-    miNodoDescuento.classList.add('fw-bolder','discountText');
+    miNodoDescuento.classList.add('fw-bolder','discountText','m-0');
     miNodoDescuento.textContent = info.discount == 0 ? "" : `${info.discount}% OFF!`;
 // Boton
     const miNodoBoton = document.createElement('a');

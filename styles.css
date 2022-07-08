@@ -1,16 +1,26 @@
 .card-img-top {
-  min-height: 216px;
-  max-height: 301px;
-  overflow: auto;
+    min-height: 216px;
+    max-height: 301px;
+    overflow: auto;
   object-fit: contain;
   background-color: white;
 }
-
-
+.card-img-top:hover {
+    transform: scale(1.4);
+    transition: 0.5s;
+}
 .card-title {
     min-height: 48px;
+    user-select: none;
 }
-
+.card-text {
+    user-select: none;
+}
 .discountText{
     min-height: 26px;
+    user-select: none;
+
+}
+.card-body {
+    overflow: hidden;
 }
