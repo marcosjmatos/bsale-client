@@ -1,0 +1,16 @@
+.card-img-top {
+  min-height: 216px;
+  max-height: 301px;
+  overflow: auto;
+  object-fit: contain;
+  background-color: white;
+}
+
+
+.card-title {
+    min-height: 48px;
+}
+
+.discountText{
+    min-height: 26px;
+}

@@ -12,6 +12,7 @@ const URL = 'https://bsale-server.herokuapp.com/';
 
 const searchInput = document.querySelector('#form12');
 searchInput.addEventListener('keyup', (e) => {
+  e.preventDefault()
   if (e.keyCode === 13) {
     getProducts(e.target.value);
     searchInput.value = '';
@@ -117,8 +118,8 @@ function renderizarProductos(productos) {
 // Body
     const miNodoCardBody = document.createElement('div');
     miNodoCardBody.classList.add(
-      'card-body'
-    );
+      'card-body',
+      );
 // Titulo
     const miNodoTitle = document.createElement('h5');
     miNodoTitle.classList.add('card-title');
@@ -141,11 +142,11 @@ function renderizarProductos(productos) {
     miNodoPrecio.textContent = `${info.price}${divisa}`;
 // Descuento
     const miNodoDescuento = document.createElement('p');
-    miNodoDescuento.classList.add('fw-bolder','sizen-1');
+    miNodoDescuento.classList.add('fw-bolder','discountText');
     miNodoDescuento.textContent = info.discount == 0 ? "" : `${info.discount}% OFF!`;
 // Boton
     const miNodoBoton = document.createElement('a');
-    miNodoBoton.classList.add(`btn`,`btn-success`);
+    miNodoBoton.classList.add(`btn`,`btn-success`,`comprarBtn`);
     miNodoBoton.textContent = 'Comprar';
     miNodoBoton.setAttribute('marcador', info.id);
     miNodoCardBody.appendChild(miNodoImagen);
@@ -161,6 +162,7 @@ function renderizarNoEncontrado() {
 // Estructura
   const miNodo = document.createElement('div');
   miNodo.classList.add('card', 'col-sm-2');
+  miNodo.setAttribute("style","width:18rem")
 // Body
   const miNodoCardBody = document.createElement('div');
   miNodoCardBody.classList.add(
@@ -172,7 +174,7 @@ function renderizarNoEncontrado() {
   miNodoTitle.textContent = 'Producto no encontrado';
 // Imagen
   const miNodoImagen = document.createElement('img');
-  miNodoImagen.classList.add("img-fluid");
+  miNodoImagen.classList.add('card-img-top','img-fluid');
   miNodoImagen.setAttribute(
     'src',
     'https://media.istockphoto.com/vectors/curiosity-magnifying-glass-doodle-cartoon-with-question-marks-vector-id1029271926?s=2048x2048'
